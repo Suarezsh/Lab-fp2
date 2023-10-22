@@ -1,3 +1,6 @@
+//Laboratorio 6
+//Autor: MARCO ANTONIO SUAREZ HUAMANI
+//==================================
 public class Soldado {
     private String nombre;
     private int vida;

@@ -1,0 +1,15 @@
+@startuml
+class Soldado {
+    - nombre: String
+    - vida: int
+    - fila: int
+    - columna: int
+
+    + Soldado(nombre: String, vida: int, fila: int, columna: int)
+    + getNombre(): String
+    + getVida(): int
+    + getFila(): int
+    + getColumna(): int
+    + toString(): String
+}
+@enduml

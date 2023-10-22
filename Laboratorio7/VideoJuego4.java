@@ -1,6 +1,3 @@
-//Laboratorio 4
-//Autor: MARCO ANTONIO SUAREZ HUAMANI
-//================================
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -64,25 +61,20 @@ public class VideoJuego4 {
 
     static void mostrarTablero(ArrayList<ArrayList<Soldado>> tablero, ArrayList<Soldado> ejercito1, ArrayList<Soldado> ejercito2) {
         System.out.println("Tablero:");
-    
-        for (int i = 0; i < tablero.size(); i++) {
-            for (int j = 0; j < tablero.get(0).size(); j++) {
-                if (tablero.get(i).get(j) == null) {
-                    System.out.print("|    ");
-                } else {
-                    Soldado soldado = tablero.get(i).get(j);
-                    if (ejercito1.contains(soldado)) {
-                        System.out.print("| E1 ");
-                    } else if (ejercito2.contains(soldado)) {
-                        System.out.print("| E2 ");
-                    }
+
+        for (ArrayList<Soldado> row : tablero) {
+            for (Soldado soldado : row) {
+                if (soldado == null) {
+                    System.out.print("|_ ");
+                } else if (ejercito1.contains(soldado)) {
+                    System.out.print("E1(" + soldado.getVida() + ") ");
+                } else if (ejercito2.contains(soldado)) {
+                    System.out.print("E2(" + soldado.getVida() + ") ");
                 }
             }
-            System.out.println("|");
+            System.out.println();
         }
     }
-    
-    
 
     static void mostrarSoldadoConMayorVida(List<Soldado> ejercito1, List<Soldado> ejercito2) {
         Soldado mayorVidaEjercito1 = Collections.max(ejercito1, (s1, s2) -> Integer.compare(s1.getVida(), s2.getVida()));
@@ -135,3 +127,4 @@ public class VideoJuego4 {
         }
     }
 }
+
